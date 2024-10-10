@@ -15,13 +15,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'mhartington/formatter.nvim'
 Plug 'diepm/vim-rest-console'
 Plug 'tveskag/nvim-blame-line'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'sbdchd/neoformat'
-
-Plug 'nvim-lua/plenary.nvim'
 
 call plug#end()
 
@@ -45,7 +42,6 @@ nmap <silent> <C-f> :noh <CR> /
 nmap <silent> <C-e> :NERDTreeToggle <CR>
 nmap <silent> <C-d> :GitGutterPreviewHunk <CR>
 nmap <silent> <C-q> :qa <CR>
-" nmap <silent> <C-b> :ToggleBlameLine<CR>
 nmap <silent> <2-LeftMouse> <Plug>(coc-definition)
 " vim-rest-console execute <C+j> 
 
@@ -98,6 +94,11 @@ noremenu <silent> .3 PopUp.Save :w<CR>
 noremenu <silent> .4 PopUp.Narrow :NR!<CR>
 
 aunmenu PopUp.How-to\ disable\ mouse
+
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
 
 lua << EOF
 require("bufferline").setup{}
