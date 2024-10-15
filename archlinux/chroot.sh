@@ -30,13 +30,13 @@ sed -i "s/^HOOKS=.*/$HOOKS/" /etc/mkinitcpio.conf
 mkinitcpio -P 
 
 echo "installing dm and wm"
-pacman --noconfirm -S lightdm lightdm-gtk-greeter i3-wm rofi 
+pacman --noconfirm -S lightdm lightdm-gtk-greeter i3-wm i3status rofi 
 
 echo "installing network tools"
-pacman --noconfirm -S netctl dhcpcd
+pacman --noconfirm -S dialog netctl dhcpcd
 
-echo "installing neovim and git"
-pacman --noconfirm -S neovim git
+echo "installing tools"
+pacman --noconfirm -S alacritty neovim git openssh firefox
 
 systemctl enable lightdm
 
