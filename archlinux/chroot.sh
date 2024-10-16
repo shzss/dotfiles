@@ -1,6 +1,4 @@
 #!/bin/bash
-set -e
-
 ln -sf /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
 hwclock --systohc
 
@@ -39,6 +37,7 @@ echo "installing tools"
 pacman --noconfirm -S alacritty neovim git openssh firefox
 
 systemctl enable lightdm
+systemctl enable fstrim.timer
 
 echo "setup bootloader systemd-boot"
 bootctl install
@@ -48,7 +47,7 @@ title Arch Linux Encrypted
 linux /vmlinuz-linux
 initrd /intel-ucode.img
 initrd /initramfs-linux.img
-options cryptdevice=UUID=%%UUID%%:cryptlvm:allow-discards root=/dev/volgroup0/root quiet rw
+options cryptdevice=UUID=%%UUID%%:cryptlvm:allow-discards root=/dev/volgroup/root quiet rw
 EOT
 
 DISKUUID=$(blkid -s UUID -o value /dev/nvme0n1p3)

@@ -1,9 +1,4 @@
 #!/bin/bash
-set -e
-
-echo "setting time from NTP"
-timedatectl set-ntp true
-
 echo "creating partitions" # partition here first /boot on 1 and luksdev on 2
 parted -s /dev/nvme0n1 mklabel gpt
 parted -s -a optimal /dev/nvme0n1 mkpart '""' fat32 1MiB 512MiB
