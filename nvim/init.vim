@@ -6,9 +6,10 @@ Plug 'tveskag/nvim-blame-line' " blame
 Plug 'rhysd/conflict-marker.vim' " conflict handler
 Plug 'airblade/vim-gitgutter' " difference
 
-"  lint & format
+"  lint, code & format
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sbdchd/neoformat' " format code
+Plug 'terrortylor/nvim-comment' " toggle comment
 
 " color & styles
 Plug 'ryanoasis/vim-devicons' " icons
@@ -40,6 +41,7 @@ set clipboard=unnamed
 set termguicolors
 
 " binds
+nmap <silent> <C-c> :'<,'>CommentToggle <CR>
 nmap <silent> <C-w> :w <CR>
 nmap <silent> <C-f> :Rg <CR>
 nmap <silent> <C-p> :Files <CR>
@@ -71,7 +73,7 @@ hi CursorLine guibg=NONE
 hi MatchParen guibg=NONE guifg=#E0FFFF
 hi Visual guibg=NONE guifg=#E0FFFF
 
-hi CocWarningHighlight guibg=#E0FFFF
+hi CocWarningHighlight guibg=NONE
 
 hi ConflictMarkerBegin ctermfg=LightGreen
 hi ConflictMarkerOurs ctermfg=LightGreen
@@ -92,4 +94,5 @@ let g:vrc_output_buffer_name = '__VRC_OUTPUT.json'
 " lua
 lua << EOF
 require('lualine').setup()
+require('nvim_comment').setup()
 EOF
