@@ -20,8 +20,8 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 
 Plug 'junegunn/fzf.vim'
 Plug 'farmergreg/vim-lastplace'
-Plug 'MunifTanjim/nui.nvim'
-Plug 'nvim-lua/plenary.nvim'
+Plug 'MunifTanjim/nui.nvim' "dependency for neotree
+Plug 'nvim-lua/plenary.nvim' " dependency for neo-tree
 Plug 'nvim-neo-tree/neo-tree.nvim'
 
 " etc
