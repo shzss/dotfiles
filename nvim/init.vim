@@ -20,6 +20,9 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 
 Plug 'junegunn/fzf.vim'
 Plug 'farmergreg/vim-lastplace'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-neo-tree/neo-tree.nvim'
 
 " etc
 Plug 'diepm/vim-rest-console' " send/display rest requests
@@ -42,16 +45,17 @@ set termguicolors
 
 " binds
 nmap <silent> <C-c> :'<,'>CommentToggle <CR>
-nmap <silent> <C-w> :w <CR>
 nmap <silent> <C-f> :Rg <CR>
 nmap <silent> <C-p> :Files <CR>
 nmap <silent> <C-h> :History <CR>
 nmap <silent> <C-b> :Buffers <CR>
 nmap <silent> <C-d> :GitGutterPreviewHunk <CR>
-nmap <silent> <C-q> :qa <CR>
-nmap <silent> <2-LeftMouse> <Plug>(coc-definition)
+nmap <silent> <S-d> <Plug>(coc-definition)
+nmap <silent> <C-0> :bp <CR>
+nmap <silent> <C-+> :bn <CR>
 
 " auto commands
+autocmd VimEnter * Neotree buffers right
 autocmd Filetype json setlocal ts=2 sw=2 expandtab
 autocmd FileType json set formatprg=jq
 autocmd BufWritePre *.tsx Neoformat
@@ -64,6 +68,7 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 " right click menu
 noremenu <silent> .1 PopUp.Blame :ToggleBlameLine <CR>
 aunmenu PopUp.How-to\ disable\ mouse
+aunmenu PopUp.Inspect
 
 " color & styles
 colo deep-space
@@ -95,4 +100,8 @@ let g:vrc_output_buffer_name = '__VRC_OUTPUT.json'
 lua << EOF
 require('lualine').setup()
 require('nvim_comment').setup()
+require("neo-tree").setup({source_selector = {
+            winbar = true,
+            statusline = true
+        }})
 EOF
