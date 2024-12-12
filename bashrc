@@ -3,7 +3,7 @@
 ##git
 alias gits="git status"
 alias gita="git add"
-alias gitc="git commit"
+alias gitc="prettier --write $(git diff --name-only --diff-filter d | grep -e '\.[tj]sx\?$' | xargs);  git commit"
 alias gitp="git push" 
 alias c="clear"
 
