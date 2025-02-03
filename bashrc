@@ -4,6 +4,7 @@
 alias gits="git status"
 alias gita="git add"
 alias gitc="prettier --write $(git diff --name-only --diff-filter d | grep -e '\.[tj]sx\?$' | xargs);  git commit"
+alias gitrc="prettier --write $(git diff --name-only --diff-filter d | grep -e '\.[tj]sx\?$' | xargs); git commit --amend -m $(git log --format=%B -n1)"
 alias gitp="git push" 
 alias c="clear"
 
