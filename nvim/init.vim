@@ -50,9 +50,10 @@ nmap <silent> <C-p> :Files <CR>
 nmap <silent> <C-h> :History <CR>
 nmap <silent> <C-b> :Buffers <CR>
 nmap <silent> <C-d> :GitGutterPreviewHunk <CR>
-nmap <silent> <S-d> <Plug>(coc-definition)
 nmap <silent> <C-0> :bp <CR>
 nmap <silent> <C-+> :bn <CR>
+nmap <silent> <S-d> <Plug>(coc-definition)
+nmap <silent> <S-c> :bp<BAR>bd# <CR>
 
 " auto commands
 autocmd VimEnter * Neotree buffers right
