@@ -42,6 +42,7 @@ set number
 set modifiable 
 set clipboard=unnamed
 set termguicolors
+set wrap!
 
 " binds
 nmap <silent> <C-c> :'<,'>CommentToggle <CR>
