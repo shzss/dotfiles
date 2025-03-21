@@ -45,17 +45,29 @@ set termguicolors
 set wrap!
 
 " binds
-nmap <silent> <C-c> :'<,'>CommentToggle <CR> " make row a comment 
-nmap <silent> <C-f> :Rg <CR> " search in files
-nmap <silent> <C-p> :Files <CR> " search files
-nmap <silent> <C-h> :History <CR> " search history of open files
-nmap <silent> <C-b> :Buffers <CR> " open buffers
-nmap <silent> <S-c> :bp<BAR>bd# <CR> " close buffer
-nmap <silent> <C-d> :GitGutterPreviewHunk <CR> " preview committer
-nmap <silent> <S-d> <Plug>(coc-definition) " go to definition
-nmap <silent> <C-0> :bp <CR> " go to previous
-nmap <silent> <C-+> :bn <CR> " go to next
-nmap <silent> <C-r> :%s/\<<C-R><C-W>\>/ " replace word
+
+" make row a comment 
+nmap <silent> <C-c> :'<,'>CommentToggle <CR> 
+" search in files
+nmap <silent> <C-f> :Rg <CR> 
+" search files
+nmap <silent> <C-p> :Files <CR> 
+" search history of open files
+nmap <silent> <C-h> :History <CR> 
+" open buffers
+nmap <silent> <C-b> :Buffers <CR> 
+" close buffer
+nmap <silent> <S-c> :bp<BAR>bd# <CR> 
+" preview committer
+nmap <silent> <C-d> :GitGutterPreviewHunk <CR> 
+" go to definition
+nmap <silent> <S-d> <Plug>(coc-definition) 
+" go to previous
+nmap <silent> <C-0> :bp <CR> 
+" go to next
+nmap <silent> <C-+> :bn <CR> 
+" replace word
+nmap <silent> <C-r> :%s/\<<C-R><C-W>\>/ 
 
 " auto commands
 autocmd VimEnter * Neotree buffers right
