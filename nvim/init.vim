@@ -82,9 +82,8 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 " right click menu
 noremenu <silent> .2 PopUp.CodeInspection-Blame :ToggleBlameLine <CR>
-noremenu <silent> .2 PopUp.Replace-All-Comma :%s/,/\r/g <CR>
-noremenu <silent> .2 PopUp.Replace-All-Rows-Comma :%s/\n/,/g <CR>
-noremenu <silent> .2 PopUp.Select-All :%y+ <CR>
+noremenu <silent> .2 PopUp.Replace-All-Comma-With-Rows :%s/,/\r/g <CR>
+noremenu <silent> .2 PopUp.Replace-All-Rows-With-Comma :%s/\n/,/g <CR>
 
 aunmenu PopUp.How-to\ disable\ mouse
 aunmenu PopUp.Inspect
