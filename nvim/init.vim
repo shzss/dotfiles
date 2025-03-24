@@ -67,7 +67,7 @@ nmap <silent> <C-0> :bp <CR>
 " go to next
 nmap <silent> <C-+> :bn <CR> 
 " replace word
-nmap <silent> <C-r> :%s/\<<C-R><C-W>\>/ 
+nmap <silent> <C-w> :%s/\<<C-R><C-W>\>/ 
 
 " auto commands
 autocmd VimEnter * Neotree buffers right
@@ -81,7 +81,11 @@ autocmd BufWritePre *.js Neoformat
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 " right click menu
-noremenu <silent> .1 PopUp.Blame :ToggleBlameLine <CR>
+noremenu <silent> .2 PopUp.CodeInspection-Blame :ToggleBlameLine <CR>
+noremenu <silent> .2 PopUp.Replace-All-Comma :%s/,/\r/g <CR>
+noremenu <silent> .2 PopUp.Replace-All-Rows-Comma :%s/\n/,/g <CR>
+noremenu <silent> .2 PopUp.Select-All :%y+ <CR>
+
 aunmenu PopUp.How-to\ disable\ mouse
 aunmenu PopUp.Inspect
 
