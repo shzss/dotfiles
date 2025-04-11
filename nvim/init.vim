@@ -59,7 +59,7 @@ nmap <silent> <C-b> :Buffers <CR>
 " close buffer
 nmap <silent> <S-c> :bp<BAR>bd# <CR> 
 " preview committer
-nmap <silent> <C-d> :GitGutterPreviewHunk <CR> 
+nmap <silent> <S-p> :GitGutterPreviewHunk <CR> 
 " go to definition
 nmap <silent> <S-d> <Plug>(coc-definition) 
 " go to previous
